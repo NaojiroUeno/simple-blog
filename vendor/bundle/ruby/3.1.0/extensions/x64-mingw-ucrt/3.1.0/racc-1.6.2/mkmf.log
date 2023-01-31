@@ -1,0 +1,65 @@
+have_func: checking for rb_block_call()... -------------------- yes
+
+PATH=".;C:/Ruby31-x64/lib;C:\Ruby31-x64\bin;C:\Ruby31-x64\msys64\ucrt64\bin;C:\Ruby31-x64\msys64\usr\bin;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.2.0_x64__8wekyb3d8bbwe;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\SMLNJ\bin\;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin;C:\Program Files\Java\jdk-15.0.1;C:\HashiCorp\Vagrant\bin;C:\Program Files\PuTTY\;%NVM_HOME%;%NVM_SYMLINK%;C:\Ruby31-x64\bin;C:\Users\Nao-U\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Nao-U\AppData\Local\Programs\Python\Python39\;C:\Users\Nao-U\AppData\Local\Microsoft\WindowsApps;C:\Users\Nao-U\AppData\Local\atom\bin;C:\Program Files\Java\jdk-15.0.1\bin;C:\intelFPGA_lite\20.1\modelsim_ase\win32aloem;C:\Users\Nao-U\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Nao-U\AppData\Local\Microsoft\WindowsApps;C:\intelFPGA\20.1\modelsim_ase\win32aloem;C:\Program Files\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin;C:\Users\Nao-U\AppData\Roaming\npm;C:\Users\Nao-U\AppData\Roaming\nvm;C:\Program Files\nodejs;" "gcc -o conftest.exe -IC:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -IC:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -IC:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LC:/Ruby31-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby310  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+PATH=".;C:/Ruby31-x64/lib;C:\Ruby31-x64\bin;C:\Ruby31-x64\msys64\ucrt64\bin;C:\Ruby31-x64\msys64\usr\bin;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.2.0_x64__8wekyb3d8bbwe;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\SMLNJ\bin\;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin;C:\Program Files\Java\jdk-15.0.1;C:\HashiCorp\Vagrant\bin;C:\Program Files\PuTTY\;%NVM_HOME%;%NVM_SYMLINK%;C:\Ruby31-x64\bin;C:\Users\Nao-U\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Nao-U\AppData\Local\Programs\Python\Python39\;C:\Users\Nao-U\AppData\Local\Microsoft\WindowsApps;C:\Users\Nao-U\AppData\Local\atom\bin;C:\Program Files\Java\jdk-15.0.1\bin;C:\intelFPGA_lite\20.1\modelsim_ase\win32aloem;C:\Users\Nao-U\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Nao-U\AppData\Local\Microsoft\WindowsApps;C:\intelFPGA\20.1\modelsim_ase\win32aloem;C:\Program Files\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin;C:\Users\Nao-U\AppData\Roaming\npm;C:\Users\Nao-U\AppData\Roaming\nvm;C:\Program Files\nodejs;" "gcc -o conftest.exe -IC:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -IC:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -IC:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LC:/Ruby31-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby310  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_block_call; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_ary_subseq()... -------------------- yes
+
+PATH=".;C:/Ruby31-x64/lib;C:\Ruby31-x64\bin;C:\Ruby31-x64\msys64\ucrt64\bin;C:\Ruby31-x64\msys64\usr\bin;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.2.0_x64__8wekyb3d8bbwe;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\SMLNJ\bin\;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin;C:\Program Files\Java\jdk-15.0.1;C:\HashiCorp\Vagrant\bin;C:\Program Files\PuTTY\;%NVM_HOME%;%NVM_SYMLINK%;C:\Ruby31-x64\bin;C:\Users\Nao-U\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Nao-U\AppData\Local\Programs\Python\Python39\;C:\Users\Nao-U\AppData\Local\Microsoft\WindowsApps;C:\Users\Nao-U\AppData\Local\atom\bin;C:\Program Files\Java\jdk-15.0.1\bin;C:\intelFPGA_lite\20.1\modelsim_ase\win32aloem;C:\Users\Nao-U\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Nao-U\AppData\Local\Microsoft\WindowsApps;C:\intelFPGA\20.1\modelsim_ase\win32aloem;C:\Program Files\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin;C:\Users\Nao-U\AppData\Roaming\npm;C:\Users\Nao-U\AppData\Roaming\nvm;C:\Program Files\nodejs;" "gcc -o conftest.exe -IC:/Ruby31-x64/include/ruby-3.1.0/x64-mingw-ucrt -IC:/Ruby31-x64/include/ruby-3.1.0/ruby/backward -IC:/Ruby31-x64/include/ruby-3.1.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LC:/Ruby31-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby310  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_ary_subseq; return !p; }
+/* end */
+
+--------------------
+

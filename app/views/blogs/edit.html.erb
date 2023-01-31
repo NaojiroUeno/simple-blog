@@ -1,0 +1,18 @@
+<div>
+  <div id="form">
+  <%= form_with model: @list, url: blog_path(@list.id) do |f| %>
+        <div class = "space_bottom">
+          <h2>タイトル</h2>
+          <%= f.text_field :title %>
+        </div>
+        <div class = "space_bottom">
+          <h2>記事内容</h2>
+          <%= f.text_area :body %>
+        </div>
+        <div class = "space_bottom">
+          <%= f.submit 'Update Article'%>
+        </div>
+  <% end %>
+  </div>
+  <div class="bottom"></div>
+</div>

@@ -1,0 +1,25 @@
+<div id="title">
+    <div>
+        <p><%= @list.created_at.strftime('%Y/%m/%d') %> / 書いた人<%= @list.user.email %></p>
+        <h1><%= @list.title %></h1>
+    </div>
+</div>
+
+<div id="article_wrap">
+
+    <div id="content">
+      <%= @list.body %>
+    </div>
+
+
+    <div id="sidebar">
+
+        <h2>★PV数ランキング</h2>
+            <ul>
+                <% @rankings.each do |top3_page| %>
+                    <li><%= link_to List.where(id: top3_page)[0].title, blog_path(List.where(id: top3_page)[0].id) %> (<%= top3_page[1] %>PV)</li>
+                <% end %>
+            </ul>
+        </div>
+    <div class="clear"></div>
+</div>
