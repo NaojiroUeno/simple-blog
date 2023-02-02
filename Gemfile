@@ -61,3 +61,7 @@ gem 'popper_js'
 gem 'tether-rails'
 gem 'faker'
 gem 'redis-rails'
+
+group :development do
+  gem 'rails-erd'
+end
