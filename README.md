@@ -7,7 +7,6 @@ Redisを使用してPV数上位3位までの表示を実装．
 Graphvizの環境を作成．
 </li>
 <li>
-bundle exec erbでER図の出力．
+bundle exec erbでER図の出力． ⇒ erd.pdfに出力
 </li>
 </ul>
-<iframe src="./erd.pdf" width="100%" height="100%"></iframe>
