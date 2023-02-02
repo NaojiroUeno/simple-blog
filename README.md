@@ -10,4 +10,4 @@ Graphvizの環境を作成．
 bundle exec erbでER図の出力．
 </li>
 </ul>
-<embed src="erd.pdf" width="100%", height="100%">
+<embed src="erd.pdf" width="100%" height="100%">
